@@ -1,0 +1,93 @@
+[
+  {
+    "image": "\/data\/upload\/1\/36787d30-00a9ea2469918c1b.jpg",
+    "id": 1,
+    "label": [
+      {
+        "x": 31.935735486191668,
+        "y": 35.996176759217484,
+        "width": 8.28587484613618,
+        "height": 3.3387911148722833,
+        "rotation": 350.45961819515844,
+        "rectanglelabels": [
+          "words"
+        ],
+        "original_width": 1600,
+        "original_height": 1065
+      },
+      {
+        "x": 39.97591096818654,
+        "y": 32.842439992279154,
+        "width": 9.367582910595322,
+        "height": 3.940113487872109,
+        "rotation": 349.84573341980087,
+        "rectanglelabels": [
+          "words"
+        ],
+        "original_width": 1600,
+        "original_height": 1065
+      },
+      {
+        "x": 56.722018828451894,
+        "y": 27.19665271966527,
+        "width": 11.511506276150627,
+        "height": 6.136680613668059,
+        "rotation": 0,
+        "rectanglelabels": [
+          "words"
+        ],
+        "original_width": 1600,
+        "original_height": 1065
+      }
+    ],
+    "text": [
+      "Extremely",
+      "Productive",
+      "null"
+    ],
+    "annotator": 1,
+    "annotation_id": 1,
+    "created_at": "2024-10-07T15:46:19.140051Z",
+    "updated_at": "2024-10-07T16:08:25.472381Z",
+    "lead_time": 114.05199999999999
+  },
+  {
+    "image": "\/data\/upload\/1\/07d7049f-00a45d1202fd0b57.jpg",
+    "id": 2,
+    "label": [
+      {
+        "x": 8.472803347280335,
+        "y": 53.13807531380753,
+        "width": 12.761506276150628,
+        "height": 7.391910739191076,
+        "rotation": 0,
+        "rectanglelabels": [
+          "words"
+        ],
+        "original_width": 1600,
+        "original_height": 1200
+      },
+      {
+        "x": 23.01255230125523,
+        "y": 52.440725244072524,
+        "width": 27.301255230125516,
+        "height": 8.089260808926085,
+        "rotation": 0,
+        "rectanglelabels": [
+          "words"
+        ],
+        "original_width": 1600,
+        "original_height": 1200
+      }
+    ],
+    "text": [
+      "PAH",
+      "SENDIA"
+    ],
+    "annotator": 1,
+    "annotation_id": 2,
+    "created_at": "2024-10-07T15:46:54.533731Z",
+    "updated_at": "2024-10-07T15:46:54.534842Z",
+    "lead_time": 32.581
+  }
+]
