@@ -1,0 +1,9 @@
+<View>
+  <Image name="image" value="$image"/>
+  <RectangleLabels name="label" toName="image" >
+    <Label value="words" background="green"/>
+    
+    
+  </RectangleLabels>
+  <TextArea name="text" toName="image" editable="true" perRegion="true" required="true" maxSubmissions="1" rows="5" placeholder="Recognized Text" displayMode="region-list"/>
+</View>
