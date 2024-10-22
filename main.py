@@ -8,9 +8,11 @@ with open("input.json", "r") as file:
 
 ofs = open("output.jsonl", "w")
 
+ofs.write('{"annotations":[')
+
 for image in origin_data:
-    print(image)
-    print(image.keys())
+    # print(image)
+    # print(image.keys())
     texts = image["text"]
     ofs.write("{")
     name = image["image"]
@@ -19,13 +21,26 @@ for image in origin_data:
         if name[i] == "/":
             name_start = i + 1
     name = name[name_start:]
+
+    name_start = 0
+    for i in range(len(name)):
+        if name[i] == "-":
+            name_start = i + 1
+            break
+    name = name[name_start:]
+
+    name_end = len(name)
+    for i in range(len(name)):
+        if name[i] == ".":
+            name_end = i
+    name = name[0:name_end]
     ofs.write(f'"image_id": "{name}",')
 
     labels = image["label"]
 
     matrix = []
     for label in labels:
-        print(label)
+        # print(label)
         # 示例資料
         original_width = label["original_width"]
         original_height = label["original_height"]
@@ -34,7 +49,7 @@ for image in origin_data:
 
         for x, y in label["points"]:
             corners.append(
-                f"[{x * 0.01 * original_width}, {y * 0.01 * original_height}],"
+                f"[{x * 0.01 * original_width}, {y * 0.01 * original_height}]"
             )
         matrix.append(corners)
 
@@ -44,6 +59,8 @@ for image in origin_data:
         ofs.write('"vertices": [')
         for corner in corners:
             ofs.write(corner)
+            if not corner is corners[-1]:
+                ofs.write(",")
         ofs.write("],")
         ofs.write(f'"legible": true,')
 
@@ -52,6 +69,8 @@ for image in origin_data:
         ofs.write('"vertices": [')
         for corner in corners:
             ofs.write(corner)
+            if not corner is corners[-1]:
+                ofs.write(",")
         ofs.write("],")
         ofs.write(f'"text": "{text}",')
         ofs.write(f'"legible": true,')
@@ -63,21 +82,26 @@ for image in origin_data:
         ofs.write('"vertices": [')
         for corner in corners:
             ofs.write(corner)
+            if not corner is corners[-1]:
+                ofs.write(",")
         ofs.write("],")
         ofs.write(f'"text": "{text}",')
         ofs.write(f'"legible": true,')
         ofs.write(f'"handwritten": false,')
-        ofs.write(f'"vertical": false,')
+        ofs.write(f'"vertical": false')
 
-        ofs.write("},")
-        ofs.write("],")
-        ofs.write("},")
-        ofs.write("],")
-        ofs.write("},")
-
+        ofs.write("}")
+        ofs.write("]")
+        ofs.write("}")
+        ofs.write("]")
+        ofs.write("}")
     ofs.write(f"]")
 
-    ofs.write("}\n")
+    ofs.write("}")
+    if image != origin_data[-1]:
+        ofs.write(",")
+
+ofs.write("]}")
 
 
 ofs.close()
